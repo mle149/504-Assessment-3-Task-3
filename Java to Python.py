@@ -1,6 +1,6 @@
 #Declare static variables
 PI = 3.14159
-
+i = 0 #Used in the MAIN while loop
 # **** FUNCTIONS ****
 
 #Function for Area of Square
@@ -23,8 +23,8 @@ def reverse_string(x):
 def palindrome():
     #Loop through numbers 1-999
     for i in range(1000):
-        x = convert_to_string(i)
-        y = reverse_string(x)
+        x = convert_to_string(i) #Convert from integer to string data type
+        y = reverse_string(x)   #Use the reverse_string python function
         #check if the number is a palindrome
         if x == y:
             print(x)
@@ -35,16 +35,17 @@ def display_menu():
     print("1. Calculate area of a square")
     print("2. Calculate area of a circle")
     print("3. Display palindromes up to 1,000")
+    print("4. Exit")
 
 #Function: Get user input for menu option
 def user_input():
     x = int(input("Enter an option: "))
     return x
 
-#Function: Make sure userinput option is between 1-3
-#If selection is between 1-3, perform the appropriate function
+#Function: Make sure userinput option is between 1-4
+#If selection is between 1-4, perform the appropriate function
 def menu_options(user_selection):
-    if user_selection >= 1 and user_selection <= 3:
+    if user_selection >= 1 and user_selection <= 4:
         if user_selection == 1:
             #Call area square function
             width = int(input("Please enter the width of a square: "))
@@ -53,18 +54,19 @@ def menu_options(user_selection):
             #Call area circle function
             radius = int(input("Please enter the radius of the circle: "))
             area_circle(radius)
-        else:
+        elif user_selection ==3:
             #Call palindrome function
             palindrome()
-    #User inputs number outside of 1-3 range
+        else:
+            quit()
+    #User inputs number outside of 1-3 range, print a invalid option to screen
     else:
         print("\nInvalid option. Please enter a valid number between 1-3.\n")
 
 
 #   **** MAIN ****
-display_menu()
-user_selection = user_input()
-menu_options(user_selection)
-
-
-
+while i<1: #While loop to prompt the user to choose an option until they exit
+    display_menu()
+    user_selection = user_input()
+    menu_options(user_selection)
+    input("\nPress Enter to continue...\n")
