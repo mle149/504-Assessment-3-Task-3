@@ -55,11 +55,11 @@ def menu_options(user_selection):
     #if user_selection >= 1 and user_selection <= 4:
     if user_selection == 1:
         #Call area square function
-        width = int(input("Please enter the width of a square: "))
+        width = float(input("Please enter the width of a square: "))
         area_square(width)
     elif user_selection == 2:
         #Call area circle function
-        radius = int(input("Please enter the radius of the circle: "))
+        radius = float(input("Please enter the radius of the circle: "))
         area_circle(radius)
     elif user_selection == 3:
         #Call palindrome function
